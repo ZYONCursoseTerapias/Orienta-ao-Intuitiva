@@ -22,15 +22,6 @@ export default function CursosDesenvolvimentoSection() {
               Novos cursos de desenvolvimento pessoal estão sendo preparados com muito cuidado.
             </p>
             <p className="font-semibold" style={{ color: '#1E6F30' }}>Em Breve Novidades</p>
-            <a
-              href="https://wa.me/5511957947776"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 px-7 py-3 rounded-full text-sm font-semibold text-white transition-colors"
-              style={{ background: '#1E6F30' }}
-            >
-              Avisar quando lançar
-            </a>
           </div>
         </div>
       </div>

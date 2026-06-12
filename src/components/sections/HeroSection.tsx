@@ -37,11 +37,12 @@ export default function HeroSection() {
         <p className="text-[16px] leading-[1.8] mb-10" style={{ color: '#4A4A4A' }}>
           Transformar desafios em aprendizados, liberar pesos que não são
           mais seus e abrir espaço para uma vida mais leve e verdadeira.
+          <br /><br />
           Caminho ao seu lado com escuta, cuidado e propósito.
         </p>
 
         <p className="text-[14px] leading-[1.8] mb-14" style={{ color: '#888888' }}>
-          Exclusivamente com horário agendado
+          Atendimentos somente com horário agendado
         </p>
 
         <a
