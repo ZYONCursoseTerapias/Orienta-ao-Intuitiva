@@ -42,7 +42,7 @@ export default function TimeInput({ label, value, onChange, error, required }: T
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-sm font-medium text-purple-200">
+      <label className="text-sm font-medium" style={{ color: '#1E6F30' }}>
         {label}{required && ' *'}
       </label>
       <input
@@ -53,12 +53,17 @@ export default function TimeInput({ label, value, onChange, error, required }: T
         onBlur={handleBlur}
         placeholder="HH:MM"
         maxLength={5}
-        className={`bg-white/10 border ${
-          error ? 'border-red-400' : 'border-white/20'
-        } rounded-lg px-4 py-3 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition`}
+        className="rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition"
+        style={{
+          background: '#fafafa',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: error ? '#f87171' : '#c8dfc8',
+          color: '#1a1a1a',
+        }}
       />
-      <p className="text-xs text-purple-400">Formato 24h — ex: 23:55</p>
-      {error && <p className="text-xs text-red-400">{error}</p>}
+      <p className="text-xs" style={{ color: '#98BE98' }}>Formato 24h — ex: 23:55</p>
+      {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   );
 }

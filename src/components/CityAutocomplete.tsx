@@ -74,7 +74,7 @@ export default function CityAutocomplete({ label, value, onChange, error, requir
 
   return (
     <div ref={wrapperRef} className="flex flex-col gap-1 relative">
-      <label className="text-sm font-medium text-purple-200">
+      <label className="text-sm font-medium" style={{ color: '#1E6F30' }}>
         {label}{required && ' *'}
       </label>
       <input
@@ -84,33 +84,39 @@ export default function CityAutocomplete({ label, value, onChange, error, requir
         onFocus={() => suggestions.length > 0 && setOpen(true)}
         placeholder="Digite o nome da cidade"
         autoComplete="off"
-        className={`bg-white/10 border ${
-          error ? 'border-red-400' : 'border-white/20'
-        } rounded-lg px-4 py-3 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition`}
+        className="rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition"
+        style={{
+          background: '#fafafa',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: error ? '#f87171' : '#c8dfc8',
+          color: '#1a1a1a',
+        }}
       />
 
       {open && (loading || suggestions.length > 0) && (
-        <ul className="absolute top-full mt-1 w-full z-50 bg-[#1a0f2e] border border-white/20 rounded-lg overflow-hidden shadow-xl">
+        <ul className="absolute top-full mt-1 w-full z-50 rounded-lg overflow-hidden shadow-xl border" style={{ background: '#ffffff', borderColor: '#c8dfc8' }}>
           {loading && (
-            <li className="px-4 py-2 text-sm text-purple-400 animate-pulse">Buscando cidades...</li>
+            <li className="px-4 py-2 text-sm animate-pulse" style={{ color: '#98BE98' }}>Buscando cidades...</li>
           )}
           {!loading && suggestions.map((city) => (
             <li
               key={city}
               onMouseDown={() => handleSelect(city)}
-              className="px-4 py-2 text-sm text-white hover:bg-purple-700/40 cursor-pointer transition"
+              className="px-4 py-2 text-sm cursor-pointer transition hover:bg-[#f0faf0]"
+              style={{ color: '#1E6F30' }}
             >
               {city}
             </li>
           ))}
           {!loading && suggestions.length === 0 && input.length >= 3 && (
-            <li className="px-4 py-2 text-sm text-purple-400">Nenhuma cidade encontrada</li>
+            <li className="px-4 py-2 text-sm" style={{ color: '#98BE98' }}>Nenhuma cidade encontrada</li>
           )}
         </ul>
       )}
 
-      <p className="text-xs text-purple-400">Apenas cidades brasileiras</p>
-      {error && <p className="text-xs text-red-400">{error}</p>}
+      <p className="text-xs" style={{ color: '#98BE98' }}>Apenas cidades brasileiras</p>
+      {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   );
 }
