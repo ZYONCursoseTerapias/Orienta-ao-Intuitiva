@@ -33,21 +33,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className="flex flex-col gap-1">
-        <label htmlFor={inputId} className="text-sm font-medium text-purple-200">
+        <label htmlFor={inputId} className="text-sm font-medium" style={{ color: '#1E6F30' }}>
           {label}
         </label>
         <input
           ref={ref}
           id={inputId}
           type={type}
-          className={`bg-white/10 border ${
-            error ? 'border-red-400' : 'border-white/20'
-          } rounded-lg px-4 py-3 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition ${className}`}
+          className={`border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition ${className}`}
+          style={{
+            background: '#fafafa',
+            borderColor: error ? '#f87171' : '#c8dfc8',
+            color: '#1a1a1a',
+          }}
           onBlur={isTel ? handleTelBlur : onBlur}
           {...props}
         />
-        {hint && !error && <p className="text-xs text-purple-400">{hint}</p>}
-        {error && <p className="text-xs text-red-400">{error}</p>}
+        {hint && !error && <p className="text-xs" style={{ color: '#98BE98' }}>{hint}</p>}
+        {error && <p className="text-xs text-red-500">{error}</p>}
       </div>
     );
   }

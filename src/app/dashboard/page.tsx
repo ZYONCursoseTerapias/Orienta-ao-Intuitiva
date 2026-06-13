@@ -29,21 +29,21 @@ export default function DashboardPage() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#0d0918] flex items-center justify-center">
-        <div className="text-purple-300 text-lg animate-pulse">Carregando...</div>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F5F3F0' }}>
+        <div className="text-lg animate-pulse" style={{ color: '#98BE98' }}>Carregando...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0d0918] px-4 py-12">
+    <div className="min-h-screen px-4 py-12" style={{ background: '#F5F3F0' }}>
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-10">
           <div>
-            <p className="text-purple-400 text-sm">Bem-vinda,</p>
-            <h1 className="text-2xl font-bold text-white">{user.full_name.split(' ')[0]} ✦</h1>
+            <p className="text-sm" style={{ color: '#98BE98' }}>Bem-vinda,</p>
+            <h1 className="text-2xl font-bold" style={{ color: '#1E6F30' }}>{user.full_name.split(' ')[0]} ✦</h1>
           </div>
-          <button onClick={logout} className="text-sm text-purple-400 hover:text-white transition underline">
+          <button onClick={logout} className="text-sm underline hover:opacity-70 transition" style={{ color: '#1E6F30' }}>
             Sair
           </button>
         </div>
@@ -56,16 +56,17 @@ export default function DashboardPage() {
           ].map((card) => (
             <div
               key={card.title}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center opacity-60 cursor-not-allowed"
+              className="rounded-2xl p-6 text-center opacity-60 cursor-not-allowed border"
+              style={{ background: '#ffffff', borderColor: '#c8dfc8' }}
             >
               <div className="text-4xl mb-3">{card.icon}</div>
-              <h3 className="text-white font-semibold mb-1">{card.title}</h3>
-              <p className="text-purple-400 text-xs">{card.status}</p>
+              <h3 className="font-semibold mb-1" style={{ color: '#1E6F30' }}>{card.title}</h3>
+              <p className="text-xs" style={{ color: '#98BE98' }}>{card.status}</p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-purple-500 text-sm mt-12">
+        <p className="text-center text-sm mt-12" style={{ color: '#98BE98' }}>
           Sua leitura completa do dia estará disponível em breve.
         </p>
       </div>

@@ -52,18 +52,16 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0d0918] flex items-center justify-center px-4">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-950/60 via-transparent to-indigo-950/40 pointer-events-none" />
-
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ background: '#F5F3F0' }}>
       <div className="relative z-10 w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="text-purple-300 text-sm hover:text-white transition">← Voltar</Link>
-          <div className="text-4xl mt-4 mb-2">✦</div>
-          <h1 className="text-3xl font-bold text-white mb-2">Bem-vinda de volta</h1>
-          <p className="text-purple-300 text-sm">Entre para acessar sua análise diária</p>
+          <Link href="/" className="text-sm hover:opacity-70 transition" style={{ color: '#1E6F30' }}>← Voltar</Link>
+          <div className="text-4xl mt-4 mb-2" style={{ color: '#6CC24A' }}>✦</div>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: '#1E6F30' }}>Bem-vinda de volta</h1>
+          <p className="text-sm" style={{ color: '#98BE98' }}>Entre para acessar sua orientação diária</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="rounded-2xl p-8 space-y-5 border" style={{ background: '#ffffff', borderColor: '#c8dfc8' }}>
           <Input
             label="E-mail"
             type="email"
@@ -92,9 +90,9 @@ export default function LoginPage() {
             Entrar
           </Button>
 
-          <p className="text-center text-sm text-purple-400">
+          <p className="text-center text-sm" style={{ color: '#98BE98' }}>
             Não tem conta?{' '}
-            <Link href="/cadastro" className="text-purple-300 hover:text-white underline underline-offset-2">
+            <Link href="/cadastro" className="underline underline-offset-2 hover:opacity-70" style={{ color: '#1E6F30' }}>
               Criar conta gratuita
             </Link>
           </p>

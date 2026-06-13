@@ -112,17 +112,15 @@ export default function CadastroPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0d0918] flex items-center justify-center px-4 py-16">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-950/60 via-transparent to-indigo-950/40 pointer-events-none" />
-
+    <div className="min-h-screen flex items-center justify-center px-4 py-16" style={{ background: '#F5F3F0' }}>
       <div className="relative z-10 w-full max-w-lg">
         <div className="text-center mb-8">
-          <Link href="/" className="text-purple-300 text-sm hover:text-white transition">← Voltar</Link>
-          <h1 className="text-3xl font-bold text-white mt-4 mb-2">Criar sua conta</h1>
-          <p className="text-purple-300 text-sm">Preencha seus dados para acessar seu Conselho Intuitivo diário</p>
+          <Link href="/" className="text-sm hover:opacity-70 transition" style={{ color: '#1E6F30' }}>← Voltar</Link>
+          <h1 className="text-3xl font-bold mt-4 mb-2" style={{ color: '#1E6F30' }}>Criar sua conta</h1>
+          <p className="text-sm" style={{ color: '#98BE98' }}>Preencha seus dados para acessar sua Orientação Intuitiva diária</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="rounded-2xl p-8 space-y-5 border" style={{ background: '#ffffff', borderColor: '#c8dfc8' }}>
           {/* 1. Nome Completo */}
           <Input
             label="Nome Completo *"
@@ -205,9 +203,9 @@ export default function CadastroPage() {
             Criar minha conta
           </Button>
 
-          <p className="text-center text-sm text-purple-400">
+          <p className="text-center text-sm" style={{ color: '#98BE98' }}>
             Já tem conta?{' '}
-            <Link href="/login" className="text-purple-300 hover:text-white underline underline-offset-2">
+            <Link href="/login" className="underline underline-offset-2 hover:opacity-70" style={{ color: '#1E6F30' }}>
               Entrar
             </Link>
           </p>

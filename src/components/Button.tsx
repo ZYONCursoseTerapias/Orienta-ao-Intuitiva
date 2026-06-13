@@ -11,9 +11,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({ children, variant = 'primary', loading, className = '', disabled, ...props }: ButtonProps) {
   const base = 'w-full py-3 px-6 rounded-lg font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   const variants = {
-    primary: 'bg-gradient-to-r from-purple-700 to-indigo-700 text-white hover:from-purple-800 hover:to-indigo-800 focus:ring-purple-500',
-    secondary: 'bg-white text-purple-800 border border-purple-300 hover:bg-purple-50 focus:ring-purple-300',
-    ghost: 'text-purple-300 hover:text-white underline underline-offset-2',
+    primary: 'text-white focus:ring-green-500',
+    secondary: 'border focus:ring-green-300',
+    ghost: 'underline underline-offset-2',
+  };
+
+  const variantStyles = {
+    primary: { background: '#1E6F30', color: '#ffffff' },
+    secondary: { background: '#ffffff', color: '#1E6F30', borderColor: '#c8dfc8' },
+    ghost: { color: '#1E6F30' },
   };
 
   return (
@@ -21,6 +27,7 @@ export default function Button({ children, variant = 'primary', loading, classNa
       {...props}
       disabled={disabled || loading}
       className={`${base} ${variants[variant]} ${disabled || loading ? 'opacity-60 cursor-not-allowed' : ''} ${className}`}
+      style={variantStyles[variant]}
     >
       {loading ? (
         <span className="flex items-center justify-center gap-2">
